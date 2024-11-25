@@ -28,6 +28,24 @@ public class Section {
         }
     }
 
+    public void deleteStudent(int id) {
+        for (Student st : arrayStu) {
+            if (st.getId() == id) {
+                arrayStu.remove(st);
+            }
+        }
+        System.out.println("Estudiante eliminado");
+    }
+
+    public void printByGender(String gender) {
+        for (Student st : arrayStu) {
+            if (st.getGender().equalsIgnoreCase(gender)){
+                System.out.println(st.getName());
+            }
+        }
+        
+    }
+
     @Override
     public String toString() {
         return "Section [NRC=" + NRC + ", arrayStu=" + arrayStu + "]";

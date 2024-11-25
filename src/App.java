@@ -12,7 +12,6 @@ public class App {
         do {
             System.out.println("1) Agregar \n2) Buscar \n3) Borrar\n4) Imprimir por género \n5 Imprimir todos \n6) Salir");
             opcion = entrada.nextInt();
-        } while (opcion != 6); 
         
         switch (opcion) {
             case 1: //Agregar estudiante
@@ -20,17 +19,20 @@ public class App {
                 Student st = new Student(entrada.nextInt(), entrada.next(), entrada.nextInt(), entrada.next());
                 lis301.addStudent(st);
                 break;
+
             case 2: //Buscar estudiante
                 System.out.println("Ingrese Id a buscar");
                 lis301.searchStudent(entrada.nextInt());
                 break;
 
             case 3: // Borrar estudiante
-            
+                System.out.println("Ingrese el Id a eliminar:");
+                lis301.deleteStudent(entrada.nextInt());
                 break;
             
             case 4: // Imprimir por genero
-
+                System.out.println("Ingrese género: female o male");
+                lis301.printByGender(entrada.next());
                 break;
 
             case 5: //Imprmir todos los estudiantes
@@ -38,12 +40,13 @@ public class App {
                 break;
 
             case 6: //Salir
-
                 break;
+
             default:
                 break;
-        }
+            }
 
+        } while (opcion != 6); 
 
     }
 }
