@@ -46,7 +46,6 @@ public class App {
                 break;
             }
 
-        } while (opcion != 6); 
-
+        } while (opcion != 6);
     }
 }
